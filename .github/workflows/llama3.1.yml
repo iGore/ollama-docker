@@ -1,4 +1,4 @@
-name: build-mistral
+name: build-llama3.1
 on:
   pull_request:
     branches:
@@ -11,7 +11,7 @@ on:
     paths-ignore:
       - "**/README.md"
 env:
-  IMAGE_NAME: mistral
+  IMAGE_NAME: llama3.1
   IMAGE_TAGS: latest
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
@@ -38,7 +38,7 @@ jobs:
           images: |
             ${{ env.IMAGE_NAME }}
           labels: |
-            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/cncf/llm-starter-pack/main/README.md
+            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/iGore/ollama-docker/main/README.md
 
       # Build image using Buildah action
       - name: Build Image
